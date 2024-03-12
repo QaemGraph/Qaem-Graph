@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسانه هنری قائم گراف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="qq.png.png" type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: morabba !important;    
+            background-color: #e0edff;
+            animation: fadeIn ease 3s;
+        }
+
+       @font-face {
+           font-family: 'morabba';
+           src: url('Morabba-Black.ttf') format('truetype'),
+           src: url('Morabba-Bold.ttf') format('truetype'),
+           src: url('Morabba-ExtraBold.ttf') format('truetype'),
+           src: url('Morabba-Heavy.ttf') format('truetype'),
+           src: url('Morabba-Light.ttf') format('truetype'),
+           src: url('Morabba-Medium.ttf') format('truetype'),
+           src: url('/Morabba-Regular.ttf') format('truetype'),
+           src: url('Morabba-SemiBold.ttf') format('truetype'),
+           src: url('Morabba-UltraLight.ttf') format('truetype');
+}
+
+    /* ادامه برای سایر استایل‌ها */
+}
+
+
+       @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        
+
+              
+        #sampleWorksContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0px; /* مارجین برای فاصله از لبه‌ها */
+}
+        @media only screen and (max-width: 600px) {
+           .element {
+               width: 50%;
+        
+    }
+}
+
+        @media only screen and (min-width: 601px) and (max-width: 1200px) {
+           .element {
+               width: 75%;
+    }
+}
+
+        @media only screen and (min-width: 1201px) {
+           .element {
+               width: 100%;
+    }
+}
+
+
+        .sampleWork {
+           width: 300px; /* عرض تصاویر */
+           height: 210px; /* ارتفاع تصاویر */
+           margin: 10px; /* مارجین بین تصاویر */
+           border: 6px solid #34383E; /* حاشیه دور تصاویر با رنگ دلخواه */
+           overflow: hidden; /* اجتناب از باز شدن حاشیه درون تصاویر */
+           position: relative; /* برای استفاده از ترفندهای مربوط به مکان‌گذاری المان‌ها */
+}
+
+        .sampleWork img {
+           width: 100%; /* تصاویر به عرض کامل حاشیه باز نشوند */
+           height: 100%; /* تصاویر به ارتفاع کامل حاشیه باز نشوند */
+           transition: transform 0.3s ease; /* افکت هنگام هوور بر روی تصاویر */
+           border-radius: 50px; /* شعاع گوشه‌ها */
+}
+
+        .sampleWork:hover img {
+           transform: scale(1.1); /* تصاویر به اندازه 1.1 بزرگ‌تر شوند */
+}
+        #sampleWorksContainer {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 20px; /* فاصله بین تصاویر */
+          justify-content: space-around;
+          margin: 20px;
+}
+      
+
+/* سایر استایل‌ها */
+
+
+
+        #moreSampleWorks {
+          padding: 50px 20px; /* افزایش فاصله داخلی بخش نمونه کارهای بیشتر */
+}
+
+ 
+       
+
+        #topBar {
+            height: 10px;
+            background-color: #92031a;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .scroll-reveal.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+         #customImage {
+            transition: transform 0.3s ease; /* افکت هنگام هوور */
+
+}
+
+
+
+
+         #customImage:hover {
+            transform: scale(1.1); /* اندازه تصویر به اندازه 1.1 بزرگ‌تر شود */
+}
+
+
+        #iconsBar {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            padding: 2px;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-left: 10px;
+            margin-top: 10px;
+            color: #fff;
+        }
+        .icon img {
+            width: 20px; /* یا هر اندازه دیگری که می‌خواهید */
+            margin-right: 5px; /* اگر نیاز به تغییر فاصله با متن دارید */
+}
+
+
+        #banner {
+            height: 300px;
+            position: relative;
+            margin-top: 0px;
+            
+        }
+
+        #banner:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+        }
+
+        #bottomText {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        #sampleWork {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #sampleWorksContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        #bottomText h1 {
+            font-size: 70px;
+            font-weight: 700 ;
+            font-weight: 700;
+            
+           
+            color: #92031a;
+        }
+        #bottomText h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #000000;
+        }
+  
+
+        #bottomText h3 {
+            font-size: 30px;
+            font-weight: 500 ;
+            padding: 40px; /* فاصله داخلی */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* سایه */
+            margin: 30px 0; /* مارجین بین متن‌ها */
+            color: #34383E;
+            backdrop-filter: blur(50px); /* میزان افکت گلس */
+            background-filter: rgba(255, 255, 255, 0.5); /* رنگ پس‌زمینه با شفافیت */
+            border-radius: 20px; /* گوشه‌ها */
+            
+            
+
+}
+        #additionalIcons {
+           display: flex;
+           align-items: center;
+}
+
+        #additionalIcons img {
+           width: 30px; /* یا هر اندازه دیگری که می‌خواهید */
+           margin-left: 10px; /* فاصله بین آیکون‌ها */
+}
+
+       
+     
+       
+        #sampleWorksTitle {
+            text-align: right;
+            margin-top: 20px;
+        }
+        #menuIcon {
+            font-size: 24px;
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+    }
+        
+        
+
+        #sampleWorksTitle h2 {
+            font-size: 40px;
+            color: #92031a;
+        }
+
+        footer {
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           text-align: center;
+           background-color: #e0edff;
+           padding: 10px;
+           border-top: 1px solid #ccc;
+}
+       
+ 
+
+        
+        #socialMedia {
+           display: flex;
+           align-items: center;
+           gap: 30px; /* فاصله کمتر بین آیکون‌ها */
+}
+
+        #socialMedia a {
+           display: flex;
+           align-items: center;
+}
+
+        
+
+
+
+
+        #socialMedia img,
+        #contactInfo p i {
+           width: 40px;
+           height: 40px;
+}
+
+
+
+        #socialMedia a:hover,
+        #contactInfo p:hover,
+        #copyrightFooter p:hover {
+            color: #92031a;
+        }
+       
+       .divider-line {
+            height: 15px; /* ارتفاع خط */
+            width: 1px; /* عرض خط */
+            background-color: #ccc; /* رنگ خط */
+            display: inline-block;
+            margin: 0 0px; /* فاصله بین خط و آیکون‌ها */
+}
+
+
+
+        
+
+        #topBanner {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* مقدار به دلخواه */
+}
+
+
+        
+
+        #sampleWorksBtn {
+            background: url('your-sample-works-image.jpg') center/cover no-repeat;
+            width: 250px;
+            height: 150px;
+            color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #sampleWorksBtn:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+       
+    </style>
+</head>
+
+   
+    
+
+    <div id="topBar"></div>
+
+    <div id="iconsBar">
+        <a id="emailIcon" class="icon" href="mailto:qaem.qaemi.2022@gmail.com"><img
+                src="ایمیل.svg"></a>
+        <div class="divider-line"></div>
+        <a id="appIcon" class="icon" href="https://daigo.ir/secret/744331568"><img
+                src="پیام.svg"></a>
+        <div class="divider-line"></div>
+        <a id="rubikaIcon" class="icon" href="https://rubika.ir/QaemGraph"><img
+                src="روبیکا کوچیک.svg" alt="Rubika Icon"></a>
+        <div class="divider-line"></div>
+        <a id="contactIcon" class="icon" href="tel:+09156045863"><img
+                src="پشتیبانی.svg"></a>
+    </div>
+    
+    <div id="topBanner">
+       <img src="بنر سایت.png.png" style="width: 100%;">
+    </div>
+
+
+
+    <div id="banner"></div>
+
+    <!-- افزوده شده: بخش نمونه کارها -->
+    <div id="bottomText">
+        <h1 class="site-title" style="text-align: center; color: #92031a; margin-top: -300px;">قائم گراف</h1>
+        <h3 style="text-align:right; color: #34383E;">
+            رسانه گرافیکی قائــــــم گراف یک واحد خلاقانه و متخــــــصص در طراحــــــــی گرافیـــــــــک و خدمات مرتبط
+            با طراحی گرافیک و هویت بصری است. این رسانه با هدف ارائـــه خدمات طراحی حرفـــه‌ای و جــذاب در زمینه‌های مختلــــــــــف به
+            کاربران خود مـــــــــــی‌پردازد؛
+        </h3>
+        <br>
+
+        <h2 style="text-align: right; color: #92031a">:طراحی گرافیــک</h2>
+        <h3 style="text-align: right; color: #34383E;">
+            طراحی مواد چاپی مانند 
+بروشورها،
+ پوسترها و کاتالوگ‌ ها،
+ طراحی لوگو و لوگوتایپ،
+ طراحی حرفه ای پوســتر،
+ تصویر سازی،طراحی بنر
+            .تبلیغاتی، طراحی کارت ویزیت، طراحی بسته بنــــــــدی محصول، طـــراحی فتـــــومـونتاژ به صورت حرفه ای و با کیفیت بالا در رسانه هنری قائم گراف صورت میگیرد
+        </h3>
+        <br>
+        <br>
+        <h2 style="text-align:center; color: #92031a;">.برای سفارش محصولات گرافیکی بر روی دکمه زیر کلیک کنید</h2>
+        
+        <!-- تصویر به عنوان عنصر قابل کلیک -->
+        <div id="customImage" onclick="window.location.href='https://web.rubika.ir/#c=u0F8BUD0ead1c44489f688f7d5a97b28'">
+            <img src="کلید سفارش.png" alt="Custom Image">
+        </div>
+        <br>
+       
+
+        <!-- خط افقی -->
+        <hr style="width: 90%; margin-top: 30px; border-color:#92031a ;">
+        <br>
+        <br>
+
+    <div id="sampleWorksTitle">
+         <h2 style="text-align: center; color: #92031a;">نمونه کارها</h2>
+    </div>
+
+    <div id="sampleWorksContainer">
+         <img class="sampleWork" src="سایت (1).png" alt="توضیح تصویر 1">
+         <img class="sampleWork" src="سایت (2).png" alt="توضیح تصویر 2">
+         <img class="sampleWork" src="سایت (3).png" alt="توضیح تصویر 3">
+         <img class="sampleWork" src="سایت (4).png" alt="توضیح تصویر 4">
+         <img class="sampleWork" src="سایت (5).png" alt="توضیح تصویر 5">
+         <img class="sampleWork" src="سایت (6).png" alt="توضیح تصویر 6">
+         <img class="sampleWork" src="سایت (7).png" alt="توضیح تصویر 7">
+         <img class="sampleWork" src="سایت (8).png" alt="توضیح تصویر 8">
+         <img class="sampleWork" src="سایت (9).png" alt="توضیح تصویر 9">
+         <img class="sampleWork" src="سایت (10).png" alt="توضیح تصویر 10">
+         <img class="sampleWork" src="سایت (11).png" alt="توضیح تصویر 11">
+         <img class="sampleWork" src="سایت (12).png" alt="توضیح تصویر 12">
+
+
+    </div>
+   
+    <!-- افزوده شده: بخش نمونه کارهای بیشتر -->
+    <div id="moreSampleWorks">
+        <div id="sampleWorksContainer">
+            <!-- نمونه کارها ... -->
+
+            <!-- آیکون جهت مشاهده نمونه کارهای بیشتر -->
+            <a href="https://rubika.ir/QaemGraph" class="hover-effect"
+                style="text-align: center; display: block;">
+                <i class="fas fa-chevron-circle-down"
+                    style="font-size: 80px; font-weight:700; color: #92031a;"></i>
+            </a>
+        <br>
+        <br>
+        </div>
+    <hr style="width: 97%; margin-top: 30px; border-color:#92031a ;">
+    <h3 style="text-align: right; color: #34383E;">رسانه هنری قائم گراف یک رسانه آنلاین در حوزه گرافیک دیزاین است. ما در رسانه هنری قائم گراف تمام تلاشمون رو میکنیم تا بهترین خدمات رو به مشتریان ارائه کنیم. رسانه گرافیکی قائم گراف با بیش از 3 سال سابقه درخشان در زمینه طراحی و چاپ، آماده ارائه خدمات حرفه ای و با کیفیت به مشتریان عزیز می باشد؛ 
+    </h3>
+    
+        </div>    
+        <div id="sampleWorksBanner" style="width: 100%; height: auto;">
+            <img src="ذذذ.png" alt="بنر زیر نمونه کارها" style="width: 100%; height: auto;">
+        <br>
+        <br>
+        <br>
+        <br>
+       
+
+
+    <!-- افزوده شده: بخش پاورقی -->
+    <footer>
+        <div id="socialMedia">
+            <a href="https://rubika.ir/QaemGraph">
+                
+                <img src="minimal.png.svg" alt="Rubika Icon">
+            </a>
+            <a href="https://web.eitaa.com/#@QaemGraph">
+                <img src="zzz.svg" alt="Rubika Icon">
+            </a>
+            <a href="">
+                <img src="اینستا.svg" alt="Rubika Icon">
+            </a>
+        </div>
+
+        
+        <div id="copyrightFooter">
+                <p style="text-align: center;">&copy; تمامی حقوق برای قائم گراف محفوظ است</p>    
+                <sup>طراح سایت: قائم قائمی</sup>
+        </div>
+            
+        
+
+            
+               
+        
+    </footer>
+
+
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            ScrollReveal().reveal('.scroll-reveal', {
+                delay: 300
+            });
+        </script>
+        
+        
+    </footer>
+</body>
+
+</html>
+
